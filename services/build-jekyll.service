@@ -1,0 +1,17 @@
+[Unit]
+Description=blog.fd93.me
+Requires=network.target
+
+[Service]
+Type=simple
+User=ubuntu
+Group=ubuntu
+WorkingDirectory=/var/www/html/blog
+ExecStart=/usr/local/bin/bundle exec /var/www/html/blog/vendor/bundle/ruby/3.0.0/bin/jekyll build --watch
+TimeoutSec=30
+RestartSec=15s
+Restart=always
+Environment=GEM_HOME=/var/www/html/blog/vendor/bundle/ruby/3.0.0/gems
+
+[Install]
+WantedBy=multi-user.target

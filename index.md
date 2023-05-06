@@ -1,16 +1,16 @@
 ---
-layout: single
-title: Blogging Like a Hacker
+title: Frank's Secret Test Blog
+classes: wide
 ---
 
-# Test
+What dark secrets could lurk within these pages?
 
-This is a test page.
+![picture-1](https://blog.fd93.me/assets/pexels-ivo-rainha-1290141.jpg)
 
-## Heading 1
-
-paragraph 1
-
-## Heading 2
-
-paragraph 2
+<ul>
+	{% for post in site.posts %}
+	<li>
+		<a href="{{ post.url }}">{{post.title}}</a>
+	</li>
+	{% endfor %}
+</ul>
